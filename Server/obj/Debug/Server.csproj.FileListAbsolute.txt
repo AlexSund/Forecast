@@ -1,0 +1,7 @@
+C:\Users\Алексей\Desktop\test\Forecast\Server\bin\Debug\Forecast.mdf
+C:\Users\Алексей\Desktop\test\Forecast\Server\bin\Debug\Forecast_log.ldf
+C:\Users\Алексей\Desktop\test\Forecast\Server\bin\Debug\Server.dll
+C:\Users\Алексей\Desktop\test\Forecast\Server\bin\Debug\Server.pdb
+C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.dll
+C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.pdb
