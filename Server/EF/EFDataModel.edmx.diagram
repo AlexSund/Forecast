@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca3e61f016eb4091a88fc38c50d7dbcb" Name="Diagram1">
+        <EntityTypeShape EntityType="ForecastModel.role" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.stock" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.subscription_types" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.subscription" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.user_stocks" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.user" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForecastModel.forecast" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="ForecastModel.FK_users_role" ManuallyRouted="false" />
+        <AssociationConnector Association="ForecastModel.FK_forecast_stock" ManuallyRouted="false" />
+        <AssociationConnector Association="ForecastModel.FK_user_stock_stock" ManuallyRouted="false" />
+        <AssociationConnector Association="ForecastModel.FK_subscription_subscription_type" ManuallyRouted="false" />
+        <AssociationConnector Association="ForecastModel.FK_subscription_user" ManuallyRouted="false" />
+        <AssociationConnector Association="ForecastModel.FK_user_stock_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

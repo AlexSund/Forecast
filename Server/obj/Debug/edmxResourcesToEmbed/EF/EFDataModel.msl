@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ForecastModelStoreContainer" CdmEntityContainer="ForecastEF">
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="ForecastModel.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role1" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stocks">
+      <EntityTypeMapping TypeName="ForecastModel.stock">
+        <MappingFragment StoreEntitySet="stocks">
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="stock_price" ColumnName="stock_price" />
+          <ScalarProperty Name="user_count" ColumnName="user_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscription_types">
+      <EntityTypeMapping TypeName="ForecastModel.subscription_types">
+        <MappingFragment StoreEntitySet="subscription_types">
+          <ScalarProperty Name="subscription_type_id" ColumnName="subscription_type_id" />
+          <ScalarProperty Name="subscription_type" ColumnName="subscription_type" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="months" ColumnName="months" />
+          <ScalarProperty Name="years" ColumnName="years" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscriptions">
+      <EntityTypeMapping TypeName="ForecastModel.subscription">
+        <MappingFragment StoreEntitySet="subscriptions">
+          <ScalarProperty Name="subscription_id" ColumnName="subscription_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="subscription_type_id" ColumnName="subscription_type_id" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="finish_date" ColumnName="finish_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_stocks">
+      <EntityTypeMapping TypeName="ForecastModel.user_stocks">
+        <MappingFragment StoreEntitySet="user_stocks">
+          <ScalarProperty Name="user_stock_id" ColumnName="user_stock_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="ForecastModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="forecasts">
+      <EntityTypeMapping TypeName="ForecastModel.forecast">
+        <MappingFragment StoreEntitySet="forecasts">
+          <ScalarProperty Name="forecast_id" ColumnName="forecast_id" />
+          <ScalarProperty Name="stock_id" ColumnName="stock_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="image_url" ColumnName="image_url" />
+          <ScalarProperty Name="result" ColumnName="result" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

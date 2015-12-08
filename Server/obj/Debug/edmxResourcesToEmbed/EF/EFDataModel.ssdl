@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ForecastModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\RAFA_\FORECAST\SERVER\FORECAST.MDF.dbo.forecasts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="forecasts">
+    <Key>
+      <PropertyRef Name="forecast_id" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="result" />
+    </Key>
+    <Property Name="forecast_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stock_id" Type="int" />
+    <Property Name="title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="image_url" Type="nvarchar" MaxLength="200" />
+    <Property Name="result" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="stocks">
+    <Key>
+      <PropertyRef Name="stock_id" />
+    </Key>
+    <Property Name="stock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="stock_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="user_count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subscription_types">
+    <Key>
+      <PropertyRef Name="subscription_type_id" />
+    </Key>
+    <Property Name="subscription_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subscription_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="days" Type="int" Nullable="false" />
+    <Property Name="months" Type="int" Nullable="false" />
+    <Property Name="years" Type="int" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="subscriptions">
+    <Key>
+      <PropertyRef Name="subscription_id" />
+    </Key>
+    <Property Name="subscription_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="subscription_type_id" Type="int" Nullable="false" />
+    <Property Name="start_date" Type="date" Nullable="false" />
+    <Property Name="finish_date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_stocks">
+    <Key>
+      <PropertyRef Name="user_stock_id" />
+    </Key>
+    <Property Name="user_stock_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="stock_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="email" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="avatar" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_forecast_stock">
+    <End Role="stocks" Type="Self.stocks" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="forecasts" Type="Self.forecasts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stocks">
+        <PropertyRef Name="stock_id" />
+      </Principal>
+      <Dependent Role="forecasts">
+        <PropertyRef Name="stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subscription_subscription_type">
+    <End Role="subscription_types" Type="Self.subscription_types" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="subscriptions" Type="Self.subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subscription_types">
+        <PropertyRef Name="subscription_type_id" />
+      </Principal>
+      <Dependent Role="subscriptions">
+        <PropertyRef Name="subscription_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_subscription_user">
+    <End Role="users" Type="Self.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="subscriptions" Type="Self.subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="subscriptions">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_stock_stock">
+    <End Role="stocks" Type="Self.stocks" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="user_stocks" Type="Self.user_stocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stocks">
+        <PropertyRef Name="stock_id" />
+      </Principal>
+      <Dependent Role="user_stocks">
+        <PropertyRef Name="stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_stock_user">
+    <End Role="users" Type="Self.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="user_stocks" Type="Self.user_stocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_stocks">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_role">
+    <End Role="roles" Type="Self.roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ForecastModelStoreContainer">
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stocks" EntityType="Self.stocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subscription_types" EntityType="Self.subscription_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subscriptions" EntityType="Self.subscriptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_stocks" EntityType="Self.user_stocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="forecasts" EntityType="Self.forecasts" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [forecasts].[forecast_id] AS [forecast_id], 
+    [forecasts].[stock_id] AS [stock_id], 
+    [forecasts].[title] AS [title], 
+    [forecasts].[comment] AS [comment], 
+    [forecasts].[image_url] AS [image_url], 
+    [forecasts].[result] AS [result]
+    FROM [dbo].[forecasts] AS [forecasts]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_forecast_stock" Association="Self.FK_forecast_stock">
+      <End Role="stocks" EntitySet="stocks" />
+      <End Role="forecasts" EntitySet="forecasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subscription_subscription_type" Association="Self.FK_subscription_subscription_type">
+      <End Role="subscription_types" EntitySet="subscription_types" />
+      <End Role="subscriptions" EntitySet="subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_subscription_user" Association="Self.FK_subscription_user">
+      <End Role="users" EntitySet="users" />
+      <End Role="subscriptions" EntitySet="subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_stock_stock" Association="Self.FK_user_stock_stock">
+      <End Role="stocks" EntitySet="stocks" />
+      <End Role="user_stocks" EntitySet="user_stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_stock_user" Association="Self.FK_user_stock_user">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_stocks" EntitySet="user_stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

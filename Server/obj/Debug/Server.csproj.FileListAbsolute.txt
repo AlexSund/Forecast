@@ -5,3 +5,15 @@ C:\Users\Алексей\Desktop\test\Forecast\Server\bin\Debug\Server.pdb
 C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
 C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.dll
 C:\Users\Алексей\Desktop\test\Forecast\Server\obj\Debug\Server.pdb
+D:\RaFa_\Forecast\Server\bin\Debug\Forecast.mdf
+D:\RaFa_\Forecast\Server\bin\Debug\Forecast_log.ldf
+D:\RaFa_\Forecast\Server\bin\Debug\Server.dll.config
+D:\RaFa_\Forecast\Server\bin\Debug\Server.dll
+D:\RaFa_\Forecast\Server\bin\Debug\Server.pdb
+D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.dll
+D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.SqlServer.dll
+D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.xml
+D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.SqlServer.xml
+D:\RaFa_\Forecast\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\RaFa_\Forecast\Server\obj\Debug\Server.dll
+D:\RaFa_\Forecast\Server\obj\Debug\Server.pdb
