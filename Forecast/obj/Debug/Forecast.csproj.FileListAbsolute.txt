@@ -107,3 +107,4 @@ D:\RaFa_\Forecast\Forecast\bin\Microsoft.Owin.Security.Twitter.xml
 D:\RaFa_\Forecast\Forecast\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\RaFa_\Forecast\Forecast\obj\Debug\Forecast.dll
 D:\RaFa_\Forecast\Forecast\obj\Debug\Forecast.pdb
+D:\RaFa_\Forecast\Forecast\obj\Debug\Forecast.csprojResolveAssemblyReference.cache

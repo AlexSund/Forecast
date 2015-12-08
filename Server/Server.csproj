@@ -101,6 +101,8 @@
     <Compile Include="EF\user_stocks.cs">
       <DependentUpon>EFDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\ImplRepositories\BaseRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forecast.mdf">
