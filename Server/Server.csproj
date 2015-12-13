@@ -102,7 +102,21 @@
       <DependentUpon>EFDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\ImplRepositories\BaseRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\ForecastRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\UserStocksRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\UserRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\SubscriptionTypesRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\SubscriptionRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\StockRepository.cs" />
+    <Compile Include="Repositories\ImplRepositories\RoleRepository.cs" />
     <Compile Include="Repositories\IntfRepositories\IRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IForecastRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IUserStocksRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\ISubscriptionRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\ISubscriptionTypesRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IStockRepository.cs" />
+    <Compile Include="Repositories\IntfRepositories\IRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forecast.mdf">
