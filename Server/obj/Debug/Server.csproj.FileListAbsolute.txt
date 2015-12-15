@@ -16,3 +16,15 @@ D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.xml
 D:\RaFa_\Forecast\Server\bin\Debug\EntityFramework.SqlServer.xml
 D:\RaFa_\Forecast\Server\obj\Debug\Server.dll
 D:\RaFa_\Forecast\Server\obj\Debug\Server.pdb
+C:\Work\Forecast\Server\bin\Debug\Forecast.mdf
+C:\Work\Forecast\Server\bin\Debug\Forecast_log.ldf
+C:\Work\Forecast\Server\bin\Debug\Server.dll.config
+C:\Work\Forecast\Server\bin\Debug\Server.dll
+C:\Work\Forecast\Server\bin\Debug\Server.pdb
+C:\Work\Forecast\Server\bin\Debug\EntityFramework.dll
+C:\Work\Forecast\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Work\Forecast\Server\bin\Debug\EntityFramework.xml
+C:\Work\Forecast\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Work\Forecast\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Work\Forecast\Server\obj\Debug\Server.dll
+C:\Work\Forecast\Server\obj\Debug\Server.pdb

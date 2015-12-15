@@ -163,3 +163,7 @@ C:\Work\Forecast\Forecast\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Work\Forecast\Forecast\obj\Debug\Forecast.csprojResolveAssemblyReference.cache
 C:\Work\Forecast\Forecast\obj\Debug\Forecast.dll
 C:\Work\Forecast\Forecast\obj\Debug\Forecast.pdb
+C:\Work\Forecast\Forecast\bin\Forecast.mdf
+C:\Work\Forecast\Forecast\bin\Forecast_log.ldf
+C:\Work\Forecast\Forecast\bin\Server.dll
+C:\Work\Forecast\Forecast\bin\Server.pdb
